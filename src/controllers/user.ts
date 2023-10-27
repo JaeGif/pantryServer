@@ -47,6 +47,22 @@ export const user_put = async (
   }
 };
 
+export const user_delete = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const user = await prisma.user.delete({
+      where: { id: req.params.id as string },
+    });
+    return res.json({ user }).status(200);
+  } catch (error) {
+    console.error(error);
+    res.sendStatus(404);
+  }
+};
+
 export const user_emailcheck = async (
   req: Request,
   res: Response,

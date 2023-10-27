@@ -54,7 +54,7 @@ export const user_delete = async (
 ) => {
   try {
     const user = await prisma.user.delete({
-      where: { id: req.params.id as string },
+      where: { id: req.params.id },
     });
     return res.json({ user }).status(200);
   } catch (error) {

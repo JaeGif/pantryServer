@@ -1,7 +1,7 @@
 import uniqid from 'uniqid';
 import { faker } from '@faker-js/faker';
 
-class DummyUser {
+export class DummyUser {
   id: string;
   name: string;
   email: string;
@@ -11,19 +11,19 @@ class DummyUser {
     this.email = email;
   }
 }
-class DummyPantry {
+export class DummyPantry {
   id: string;
   constructor() {
     this.id = uniqid();
   }
 }
-class DummyRecipe {
+export class DummyRecipe {
   id: string;
   constructor() {
     this.id = uniqid();
   }
 }
-class DummyFoodItem {
+export class DummyFoodItem {
   id: string;
   name: string;
   quantity: number;
